@@ -91,37 +91,24 @@ function downloadCV(event) {
 
   const success = document.getElementById('successMessage');
 
-  fetch('/assets/resume/sumit-resume.pdf')
-    .then(res => res.blob())
-    .then(blob => {
-      const blobUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = 'sumit-resume.pdf';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(blobUrl);
+  const a = document.createElement('a');
+  a.href = 'assets/resume/sumit-resume.pdf'; // ensure this is the correct relative path
+  a.setAttribute('download', 'sumit-resume.pdf');
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 
-      // Show success message
-      success.style.display = 'block';
+  // Show success and confetti
+  success.style.display = 'block';
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
 
-      // Launch confetti
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-
-      // Hide after animation
-      setTimeout(() => {
-        success.style.display = 'none';
-      }, 3000);
-    })
-    .catch(err => {
-      console.error('Download failed:', err);
-      alert('Download failed. Please try again.');
-    });
+  setTimeout(() => {
+    success.style.display = 'none';
+  }, 3000);
 }
 
 
