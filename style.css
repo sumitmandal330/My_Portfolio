@@ -342,7 +342,7 @@ h3.hello{
 }
 
 h3.hello span{
-    font-family: 'Clicker Script', cursive;
+    
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
@@ -454,16 +454,18 @@ h3.my-profession{
     
 .about .about-content .skills
 {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-top: 40px;
     
 }
 
 .about .about-content .skills .skill-item
 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 500%;
+    max-width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
 
 }
 
@@ -601,6 +603,19 @@ h3.my-profession{
     text-align: justify;
     color: var(--text-black-700) 
 }
+
+.hire {
+    display: inline-block; /* or block with auto margins */
+    margin-bottom: 100px;
+   
+    
+  }
+  
+  .buttons {
+    width: 100%;
+    text-align: center; /* This centers inline-block items like the button */
+  }
+  
 
 /* services */
 
@@ -1068,6 +1083,18 @@ h3.my-profession{
     height: 50px;
     padding: 0 50px;
 }
+
+.contact-info-item .icon-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+  
+  .contact-info-item .icon-link .icon .fab {
+    font-size: 32px; /* increase icon size */
+    color: var(--skin-color);
+  }
+  
 
 .overlay {
     display: none;
