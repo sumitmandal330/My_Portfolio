@@ -374,6 +374,7 @@ h3.my-profession{
 .home .home-img img{
     height: 300px;
     border-radius: 5px;
+    margin-top: 30px;
     
 
 }
@@ -1102,7 +1103,7 @@ h3.my-profession{
   /* Success message */
   .success-message {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 0;
     background-color: var(--skin-color);
     color: #fff;
@@ -1112,6 +1113,7 @@ h3.my-profession{
     display: none;
     animation: fadeInOut 3s ease-in-out forwards;
     white-space: nowrap;
+    z-index: 50;
   }
   
   @keyframes fadeInOut {
