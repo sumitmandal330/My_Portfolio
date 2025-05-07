@@ -92,7 +92,8 @@ function downloadCV(event) {
   const success = document.getElementById('successMessage');
 
   const a = document.createElement('a');
-  a.href = 'assets/resume/sumit_kumar_mandal.pdf'; // ensure this is the correct relative path
+   a.href = `${window.location.origin}/My_Portfolio/assets/resume/sumit_kumar_mandal.pdf`;
+
   a.setAttribute('download', 'sumit_kumar_mandal.pdf');
   document.body.appendChild(a);
   a.click();
