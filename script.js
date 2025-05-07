@@ -92,14 +92,22 @@ function downloadCV(event) {
   const success = document.getElementById('successMessage');
 
   const a = document.createElement('a');
-   a.href = `${window.location.origin}/My_Portfolio/assets/resume/sumit_kumar_mandal.pdf`;
 
+  const repoName = window.location.pathname.split('/')[1];
+
+  let pdfPath = '';
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    pdfPath = '/assets/resume/sumit_kumar_mandal.pdf';
+  } else {
+    pdfPath = `/${repoName}/assets/resume/sumit_kumar_mandal.pdf`;
+  }
+
+  a.href = `${window.location.origin}${pdfPath}`;
   a.setAttribute('download', 'sumit_kumar_mandal.pdf');
   document.body.appendChild(a);
   a.click();
   a.remove();
 
-  // Show success and confetti
   success.style.display = 'block';
   confetti({
     particleCount: 100,
@@ -111,6 +119,7 @@ function downloadCV(event) {
     success.style.display = 'none';
   }, 3000);
 }
+
 
 
   // Wait for the DOM to fully load
