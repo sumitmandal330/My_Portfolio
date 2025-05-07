@@ -92,8 +92,8 @@ function downloadCV(event) {
   const success = document.getElementById('successMessage');
 
   const a = document.createElement('a');
-  a.href = 'assets/resume/sumit-resume.pdf'; // ensure this is the correct relative path
-  a.setAttribute('download', 'sumit-resume.pdf');
+  a.href = 'assets/resume/sumit_kumar_mandal.pdf'; // ensure this is the correct relative path
+  a.setAttribute('download', 'sumit_kumar_mandal.pdf');
   document.body.appendChild(a);
   a.click();
   a.remove();
