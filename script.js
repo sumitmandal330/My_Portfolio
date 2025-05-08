@@ -121,6 +121,20 @@ function downloadCV(event) {
 }
 
 
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+
+  const form = this;
+
+  emailjs.sendForm('service_xp6ns2r', 'template_07jt7ao', form)
+    .then(function () {
+      alert('Message sent successfully!');
+      form.reset(); // ✅ Clear all form inputs
+    }, function (error) {
+      console.error('FAILED...', error);
+      alert('Failed to send message. Please try again.');
+    });
+});
 
   // Wait for the DOM to fully load
 
